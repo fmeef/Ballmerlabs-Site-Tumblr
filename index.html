@@ -33,9 +33,27 @@
         <ul></ul>
       </div>
       <p>
-        <div class='boxlist' id='maincol-container'>
-          <div class='boxlist-box' id='maincol-item'></div>
-        </div>
+        <ol class='boxlist' id='maincol-container'>
+          {block:Posts}{block:Text}
+          <li class='boxlist-box' id='maincol-item-text'></li>
+          {/block:Text}{block:Photo}
+          <li class='boxlist-box' id='maincol-item-photo'></li>
+          {/block:Photo}{block:Panorama}
+          <li class='boxlist-box' id='maincol-item-panorama'></li>
+          {/block:Panorama}{block:Photoset}
+          <li class='boxlist-box' id='maincol-item-photoset'></li>
+          {/block:Photoset}{block:Quote}
+          <li class='boxlist-box' id='maincol-item-quote'></li>
+          {/block:Quote}{block:Link}
+          <li class='boxlist-box' id='maincol-item-link'></li>
+          {/block:Link}{block:Chat}
+          <li class='boxlist-box' id='maincol-item-chat'></li>
+          {/block:Chat}{block:Video}
+          <li class='boxlist-box' id='maincol-item-video'></li>
+          {/block:Video}{block:Audio}
+          <li class='boxlist-box' id='maincol-item-audio'></li>
+          {/block:Audio}{/block:Posts}
+        </ol>
       </p>
     </div>
   </head>

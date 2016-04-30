@@ -23,6 +23,23 @@
                Navigation
             %ul
          %p
-            %div{:id => "maincol-container", :class => "boxlist"}
-               %div{:id => "maincol-item", :class => "boxlist-box"}
-                       
+            %ol{:id => "maincol-container", :class => "boxlist"}
+               {block:Posts}{block:Text}
+               %li{:id => "maincol-item-text", :class => "boxlist-box"}
+               {/block:Text}{block:Photo}
+               %li{:id => "maincol-item-photo", :class => "boxlist-box"}
+               {/block:Photo}{block:Panorama}
+               %li{:id => "maincol-item-panorama", :class => "boxlist-box"}
+               {/block:Panorama}{block:Photoset}
+               %li{:id => "maincol-item-photoset", :class => "boxlist-box"}
+               {/block:Photoset}{block:Quote}
+               %li{:id => "maincol-item-quote", :class => "boxlist-box"}
+               {/block:Quote}{block:Link}
+               %li{:id => "maincol-item-link", :class => "boxlist-box"}
+               {/block:Link}{block:Chat}
+               %li{:id => "maincol-item-chat", :class => "boxlist-box"}
+               {/block:Chat}{block:Video}
+               %li{:id => "maincol-item-video", :class => "boxlist-box"}
+               {/block:Video}{block:Audio}
+               %li{:id => "maincol-item-audio", :class => "boxlist-box"}
+               {/block:Audio}{/block:Posts}
