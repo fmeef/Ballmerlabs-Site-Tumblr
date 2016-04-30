@@ -29,20 +29,68 @@
             %ol{:id => "maincol-container", :class => "boxlist"}
                {block:Posts}{block:Text}
                %li{:id => "maincol-item-text", :class => "boxlist-box"}
+                  %h3
+                     %a{:href => "{Permalink}"}
+                        {Title}
                {/block:Text}{block:Photo}
                %li{:id => "maincol-item-photo", :class => "boxlist-box"}
+                  %img{:src => "{PhotoURL-500}", :alt => "{PhotoAlt}"}/
+                  {block:Caption}
+                  %div{:class => "caption"}
+                     {Caption}
+                  {/block:Caption}
                {/block:Photo}{block:Panorama}
                %li{:id => "maincol-item-panorama", :class => "boxlist-box"}
+                  {LinkOpenTag}
+                  %img{:src => "{PhotoURL-Panorama}", :alt => "{PhotoAlt}"}/
+                  {LinkCloseTag}{block:Caption}
+                  %div{:class => "caption"}
+                     {Caption}
+                  {/block:Caption}
                {/block:Panorama}{block:Photoset}
                %li{:id => "maincol-item-photoset", :class => "boxlist-box"}
+                  {Photoset-500}{block:Caption}
+                  %div{:class => "caption"}
+                     {Caption}
                {/block:Photoset}{block:Quote}
                %li{:id => "maincol-item-quote", :class => "boxlist-box"}
+                  "{Quote}"
+
+                  {block:Source}
+                  %div{:class => "source"}
+                     {Source}
                {/block:Quote}{block:Link}
                %li{:id => "maincol-item-link", :class => "boxlist-box"}
+                  <a href="{URL}" clas="link" {Target}>{Name}</a>
+                  {block:Description}
+                  %div{:class => "description"}
+                     {Description}
+                  {/block:Description}
                {/block:Link}{block:Chat}
                %li{:id => "maincol-item-chat", :class => "boxlist-box"}
+                  {block:Title}
+                  %h3
+                     %a{:href => "{Permalink}"}
+                        {Title}
+                  {/block:Title}
+                  %ul{:class => "chat"}
+                     {block:Lines}
+                     %li{:class => "{Alt} user_{UserNumber}"}
+                        {block:Lable}
+                        %span{:class => "lable"}
+                           {Lable}
+                        {/block:Lable}
+                     {/block:Lines}
                {/block:Chat}{block:Video}
                %li{:id => "maincol-item-video", :class => "boxlist-box"}
+                  {Video-500}{block:Caption}
+                  %div{:class => "caption"}
+                     {Caption}
+                  {/block:Caption}
                {/block:Video}{block:Audio}
                %li{:id => "maincol-item-audio", :class => "boxlist-box"}
+                  {AudioEmbed}{block:Caption}
+                  %div{:class => "caption"}
+                     {Caption}
+                  {/block:Caption}
                {/block:Audio}{/block:Posts}

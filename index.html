@@ -38,23 +38,93 @@
       <p>
         <ol class='boxlist' id='maincol-container'>
           {block:Posts}{block:Text}
-          <li class='boxlist-box' id='maincol-item-text'></li>
+          <li class='boxlist-box' id='maincol-item-text'>
+            <h3>
+              <a href='{Permalink}'>
+                {Title}
+              </a>
+            </h3>
+          </li>
           {/block:Text}{block:Photo}
-          <li class='boxlist-box' id='maincol-item-photo'></li>
+          <li class='boxlist-box' id='maincol-item-photo'>
+            <img alt='{PhotoAlt}' src='{PhotoURL-500}'>
+            {block:Caption}
+            <div class='caption'>
+              {Caption}
+            </div>
+            {/block:Caption}
+          </li>
           {/block:Photo}{block:Panorama}
-          <li class='boxlist-box' id='maincol-item-panorama'></li>
+          <li class='boxlist-box' id='maincol-item-panorama'>
+            {LinkOpenTag}
+            <img alt='{PhotoAlt}' src='{PhotoURL-Panorama}'>
+            {LinkCloseTag}{block:Caption}
+            <div class='caption'>
+              {Caption}
+            </div>
+            {/block:Caption}
+          </li>
           {/block:Panorama}{block:Photoset}
-          <li class='boxlist-box' id='maincol-item-photoset'></li>
+          <li class='boxlist-box' id='maincol-item-photoset'>
+            {Photoset-500}{block:Caption}
+            <div class='caption'>
+              {Caption}
+            </div>
+          </li>
           {/block:Photoset}{block:Quote}
-          <li class='boxlist-box' id='maincol-item-quote'></li>
+          <li class='boxlist-box' id='maincol-item-quote'>
+            "{Quote}"
+            {block:Source}
+            <div class='source'>
+              {Source}
+            </div>
+          </li>
           {/block:Quote}{block:Link}
-          <li class='boxlist-box' id='maincol-item-link'></li>
+          <li class='boxlist-box' id='maincol-item-link'>
+            <a href="{URL}" clas="link" {Target}>{Name}</a>
+            {block:Description}
+            <div class='description'>
+              {Description}
+            </div>
+            {/block:Description}
+          </li>
           {/block:Link}{block:Chat}
-          <li class='boxlist-box' id='maincol-item-chat'></li>
+          <li class='boxlist-box' id='maincol-item-chat'>
+            {block:Title}
+            <h3>
+              <a href='{Permalink}'>
+                {Title}
+              </a>
+            </h3>
+            {/block:Title}
+            <ul class='chat'>
+              {block:Lines}
+              <li class='{Alt} user_{UserNumber}'>
+                {block:Lable}
+                <span class='lable'>
+                  {Lable}
+                </span>
+                {/block:Lable}
+              </li>
+              {/block:Lines}
+            </ul>
+          </li>
           {/block:Chat}{block:Video}
-          <li class='boxlist-box' id='maincol-item-video'></li>
+          <li class='boxlist-box' id='maincol-item-video'>
+            {Video-500}{block:Caption}
+            <div class='caption'>
+              {Caption}
+            </div>
+            {/block:Caption}
+          </li>
           {/block:Video}{block:Audio}
-          <li class='boxlist-box' id='maincol-item-audio'></li>
+          <li class='boxlist-box' id='maincol-item-audio'>
+            {AudioEmbed}{block:Caption}
+            <div class='caption'>
+              {Caption}
+            </div>
+            {/block:Caption}
+          </li>
           {/block:Audio}{/block:Posts}
         </ol>
       </p>
